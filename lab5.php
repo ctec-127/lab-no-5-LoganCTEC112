@@ -10,6 +10,48 @@
     <title>Lab No. 5</title>
 </head>
 <body>
+<?php // query string paramaters
+
+    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+        // aralia
+        if (isset($_GET['aralia'])) {
+            if (strtolower($_GET['aralia']) == 'show') {
+                $aralia = 'show';
+            }
+            if (strtolower($_GET['aralia']) == 'hide') {
+                $aralia = 'hide';
+            }
+        } else {
+            $aralia = 'show';
+        }
+
+        // arborvitae
+        if (isset($_GET['arborvitae'])) {
+            if (strtolower($_GET['arborvitae']) == 'show') {
+                $arborvitae = 'show';
+            }
+            if (strtolower($_GET['arborvitae']) == 'hide') {
+                $arborvitae = 'hide';
+            }
+        } else {
+            $arborvitae = 'show';
+        } 
+
+        // ash
+        if (isset($_GET['ash'])) {
+            if (strtolower($_GET['ash']) == 'show') {
+                $ash = 'show';
+            }
+            if (strtolower($_GET['ash']) == 'hide') {
+                $ash = 'hide';
+            }
+        } else {
+            $ash = 'show';
+        }       
+    }
+?>
+
 <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Clark College Aboretum</a>
@@ -52,8 +94,8 @@
     </div>
 
     <div class="container-fluid mt-3">
-        <h3 class="text-white p-3 shadow">Aralia</h3>
-        <div class="row mb-3">
+        <h3 class="text-white p-3 shadow <?php echo $aralia; ?>">Aralia</h3>
+        <div class="row mb-3 <?php echo $aralia; ?>">
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card mt-3 mb-3 shadow">
                     <div class="card-header align-leff">
@@ -69,8 +111,8 @@
             </div>
         </div>
 
-        <h3 class="p-3 shadow">Arborvitae</h3>
-        <div class="row mb-3">
+        <h3 class="p-3 shadow <?php echo $arborvitae; ?>">Arborvitae</h3>
+        <div class="row mb-3 <?php echo $arborvitae; ?>">
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card mt-3 mb-3 shadow">
                     <div class="card-header shadow">
@@ -86,8 +128,8 @@
             </div>
         </div>
 
-        <h3 class="p-3 shadow">Ash</h3>
-        <div class="row mb-3">
+        <h3 class="p-3 shadow <?php echo $ash; ?>">Ash</h3>
+        <div class="row mb-3 <?php echo $ash; ?>">
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card mt-3 mb-3 shadow">
                     <div class="card-header shadow">
